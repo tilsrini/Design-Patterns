@@ -1,23 +1,25 @@
-﻿using MiddleLayer;
-using System;
-using System.Collections.Generic;
+﻿using System;
+using Unity;
+using InterfaceCustomer;
+using MiddleLayer;
 
 namespace FactoryCustomer
 {
     public static class Factory
     {
-        private static Dictionary<string, CustomerBase> custs = new Dictionary<string, CustomerBase>();
 
+        private static IUnityContainer custs = null;
 
-        public static CustomerBase Create(string custType)
+        public static ICustomer Create(string custType)
         {
-            if (custs.Count == 0)
+            if (custs == null)
             {
-                custs.Add("Customer", new Customer());
-                custs.Add("Lead", new Lead());
+                custs = new UnityContainer();
+                custs.RegisterType<ICustomer, Customer>("Customer");
+                custs.RegisterType<ICustomer, Lead>("Lead");
             }
 
-            return custs[custType];
+            return custs.Resolve<ICustomer>(custType);
         }
     }
 }

@@ -7,15 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MiddleLayer;
 using FactoryCustomer;
+using InterfaceCustomer;
+
 
 namespace WinformCustomer
 {
     public partial class FrmCustomer : Form
     {
 
-        private CustomerBase cust = null;
+        private ICustomer cust = null;
 
         public FrmCustomer()
         {
@@ -48,7 +49,7 @@ namespace WinformCustomer
 
         private void cmbCustomerType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cust = Factory.Create(cmbCustomerType.Text);
+            cust = FactoryCustomer.Factory.Create(cmbCustomerType.Text);
         }
     }
 }
