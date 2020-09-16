@@ -81,6 +81,7 @@
             this.txtBillAmount.Name = "txtBillAmount";
             this.txtBillAmount.Size = new System.Drawing.Size(100, 20);
             this.txtBillAmount.TabIndex = 3;
+            this.txtBillAmount.Text = "0";
             // 
             // label3
             // 
@@ -113,6 +114,7 @@
             this.txtBillDate.Name = "txtBillDate";
             this.txtBillDate.Size = new System.Drawing.Size(100, 20);
             this.txtBillDate.TabIndex = 7;
+            this.txtBillDate.Text = "01/01/2010";
             // 
             // label5
             // 

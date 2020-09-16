@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CustomerProjectPhase1\MiddleLayer.csproj" />
     <ProjectReference Include="..\InterfaceCustomer\InterfaceCustomer.csproj" />
+    <ProjectReference Include="..\ValidationStrategyORAlgorithems\ValidationStrategyORAlgorithems.csproj" />
   </ItemGroup>
 
 </Project>
